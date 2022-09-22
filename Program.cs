@@ -24,14 +24,28 @@
     /// <returns>A list of 9 strings representing each square.</returns>
     static List<string> GetNewBoard()
     {
-        
+        List<string> board = new List<string>();    
+
+        for (int i =1; i <=9; i++)
+        {
+            board.Add(i.ToString());
+        }
+        return board;
     }
+
+
+    /// string[] numbers = {"1", "2"...}
+    /// return new List<string>(numbers); 
 
     /// <summary>Displays the board in a 3x3 grid.</summary>
     /// <param name="board">The board</param>
     static void DisplayBoard(List<string> board)
     {
-
+        Console.WriteLine($"{board[0]}|{board[1]}|{board[2]}");
+        Console.WriteLine("-+-+-");
+        Console.WriteLine($"{board[3]}|{board[4]}|{board[5]}");
+        Console.WriteLine("-+-+-");
+        Console.WriteLine($"{board[6]}|{board[7]}|{board[8]}");
     }
 
     /// <summary>
@@ -86,6 +100,6 @@
     /// <param name="currentPlayer">The current player's sign (x or o)</param>
     static void MakeMove(List<string> board, int choice, string currentPlayer)
     {
-
+        
     }
 }
