@@ -55,22 +55,39 @@
     /// <returns>True if the game is over</returns>
     static bool IsGameOver(List<string> board)
         {
-            bool isGameOver = false;
 
             if (IsWinner(board, "x") || IsWinner(board, "o") || IsTie(board))
             {
-                isGameOver = true;
+                return true;
             }
-
-            return isGameOver;
+            else
+            {
+                return false;
+            }
         }
-
     /// <summary>Determines if the provided player has a tic tac toe.</summary>
     /// <param name="board">The current board</param>
     /// <param name="player">The player to check for a win</param>
     /// <returns></returns>
     static bool IsWinner(List<string> board, string player)
     {
+        if (board[0] == player && board[1] == player && board[2] == player){
+            return true;
+        }
+        else if (board[3] == player && board[4] == player && board[5] == player){
+            return true;
+        }
+        else if (board[6] == player && board[7] == player && board[8] == player){
+            return true;
+        }
+        else if (board[2] == player && board[4] == player && board[6] == player){
+            return true; 
+        }
+        else if (board[0] == player && board[4] == player && board[8] == player){
+            return true;
+        }
+
+
         return false;
     }
 
