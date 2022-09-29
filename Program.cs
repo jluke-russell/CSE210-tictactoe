@@ -139,7 +139,8 @@
     static int GetMoveChoice(string currentPlayer)
     {
         Console.Write($"{currentPlayer}'s turn to choose a square (1-9): ");
-        string move_string = Console.ReadLine();
+        string move_string = Console.ReadLine() ?? ""; 
+        // the ' ?? "" ' tells it to use an empty string if there's a null value 
 
         int choice = int.Parse(move_string);
         return choice;
